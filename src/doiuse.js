@@ -34,9 +34,11 @@ function doiuse (options) {
         }
 
         let message = features[feature].title + ' not supported by: ' +
-          features[feature].missing + ' (' + feature + ')'
+          features[feature].missing + ' (' + feature + ')';
 
-        result.warn(message, { node: usage, plugin: 'doiuse' })
+        let warn = function resultWarn() {
+          result.warn(message, { node: usage, plugin: 'doiuse' });
+        };
 
         if (onFeatureUsage) {
           let loc = usage.source
@@ -51,12 +53,16 @@ function doiuse (options) {
           message = (loc.original.start.source || loc.input.file || loc.input.from) + ':' +
             loc.original.start.line + ':' + loc.original.start.column + ': ' + message
 
-          onFeatureUsage({
-            feature: feature,
-            featureData: features[feature],
-            usage: usage,
-            message: message
-          })
+          if (onFeatureUsage({
+                feature: feature,
+                featureData: features[feature],
+                usage: usage,
+                message: message
+            })) {
+            warn();
+          }
+        } else {
+          warn();
         }
       })
     }
