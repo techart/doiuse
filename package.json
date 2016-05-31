@@ -7,7 +7,6 @@
     "test": "standard && tape test/*.js",
     "babel": "babel -d lib/ src/",
     "pretest": "npm run babel",
-    "prepublish": "npm run babel",
     "postinstall": "babel -d lib/ src/"
   },
   "bin": "./cli.js",
