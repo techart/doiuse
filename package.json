@@ -8,7 +8,7 @@
     "babel": "babel -d lib/ src/",
     "pretest": "npm run babel",
     "prepublish": "npm run babel",
-    "postinstall": "../.bin/babel -d lib/ src/"
+    "postinstall": "npm run babel"
   },
   "bin": "./cli.js",
   "repository": {
