@@ -1,7 +1,7 @@
 {
-  "name": "doiuse",
+  "name": "@webtechart/doiuse",
   "version": "2.5.0",
-  "description": "Lint CSS for browser support against caniuse database.",
+  "description": "Fork of original doiuse plugin",
   "main": "lib/doiuse.js",
   "scripts": {
     "test": "standard && tape test/*.js",
