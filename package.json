@@ -1,6 +1,6 @@
 {
   "name": "@webtechart/doiuse",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Fork of original doiuse plugin",
   "main": "lib/doiuse.js",
   "scripts": {
